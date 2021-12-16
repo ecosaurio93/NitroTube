@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Platforms>AnyCPU;x64</Platforms>
+    <StartupObject>NitroTube.Program</StartupObject>
+    <ApplicationIcon>NitroTubeIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="NitroTubeInstaller\**" />
+    <EmbeddedResource Remove="NitroTubeInstaller\**" />
+    <None Remove="NitroTubeInstaller\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Helpers\aria2c.exe" />
+    <None Remove="Helpers\youtube-dl.exe" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="NitroTubeIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Helpers\aria2c.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Helpers\youtube-dl.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+
+</Project>
